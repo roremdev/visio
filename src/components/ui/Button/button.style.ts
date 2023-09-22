@@ -1,6 +1,6 @@
-import plugin from 'tailwindcss/plugin';
+import plugin from 'tailwindcss/plugin'
 
-export const button = plugin(function ({addComponents}) {
+export const button = plugin(function ({ addComponents }) {
     addComponents({
         '.button': {
             '@apply py-0.5 px-1': {},
@@ -10,7 +10,7 @@ export const button = plugin(function ({addComponents}) {
 
             '&__label': {
                 '@apply text-sm font-semibold': {},
-            }
-        }
+            },
+        },
     })
-});
+})

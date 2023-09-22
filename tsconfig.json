@@ -15,7 +15,9 @@
         "jsx": "react-jsx",
         "paths": {
             "@components/*": ["./src/components/*"],
-            "@layouts/*": ["./src/layouts/*"]
+            "@layouts/*": ["./src/layouts/*"],
+            // Module aliases
+            "@welcome/*": ["./src/welcome/*"]
         }
     },
     "include": ["src"]

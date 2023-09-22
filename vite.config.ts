@@ -8,6 +8,9 @@ export default defineConfig({
         alias: {
             '@components': resolve(__dirname, '/src/components'),
             '@layouts': resolve(__dirname, '/src/layouts'),
+
+            // Module aliases
+            '@welcome': resolve(__dirname, '/src/welcome'),
         },
     },
 })

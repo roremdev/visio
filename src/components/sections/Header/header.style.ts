@@ -1,16 +1,25 @@
-import plugin from 'tailwindcss/plugin';
+import plugin from 'tailwindcss/plugin'
 
-export const header = plugin(function ({addBase}) {
+export const header = plugin(function ({ addBase }) {
     addBase({
         '.header': {
-            '@apply h-7 relative': {},
+            '@apply h-5 relative': {},
             '@apply py-1 px-3': {},
             '@apply row-center-between': {},
-            '@apply bg-white border-b-2 border-light-500': {},
+            '@apply bg-white border-b border-light-500': {},
 
-            '&__headline': {
-                '@apply text-4xl font-bold': {},
+            '.header__content': {
+                '@apply row-center-between gap-0.5': {},
+
+                '.header__logo': {
+                    '@apply w-4 h-4': {},
+                    '@apply bg-logo': {},
+                },
+
+                '.header__headline': {
+                    '@apply text-2xl font-medium': {},
+                },
             },
-        }
+        },
     })
-});
+})

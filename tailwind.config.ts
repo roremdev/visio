@@ -1,16 +1,13 @@
 /** @type {import('tailwindcss').Config} */
-import plugin from 'tailwindcss/plugin';
+import plugin from 'tailwindcss/plugin'
 
-import {header} from './src/components/sections/Header/header.style'
-import {button} from './src/components/ui/Button/button.style'
+import { header } from './src/components/sections/Header/header.style'
+import { button } from './src/components/ui/Button/button.style'
 
-import {home} from './src/Welcome/welcome.style'
+import { home } from './src/welcome/welcome.style'
 
 export default {
-    content: [
-        "./index.html",
-        "./src/**/*.{js,ts,jsx,tsx}",
-    ],
+    content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
     theme: {
         boxShadow: {
             DEFAULT: '0px 8px 24px #959DA533',
@@ -18,17 +15,26 @@ export default {
         colors: {
             dark: {
                 300: '#6E798C',
-                500: '#2E3440'
+                500: '#3B4252',
+                600: '#2E3440',
             },
             light: {
                 400: '#F8F9FB',
                 500: '#D8DEE9',
-                600: '#a4b1c5'
+                600: '#a4b1c5',
             },
-            white: '#FFFFFF'
+            white: '#FFFFFF',
+        },
+        extend: {
+            backgroundImage: {
+                logo: 'url("/assets/brand/logo.svg")',
+
+                // Backgrounds patters
+                'dots-pattern': 'url("/assets/images/dots-pattern.svg")',
+            },
         },
         fontFamily: {
-            roboto: ['Roboto', 'sans-serif']
+            ubuntu: ['Ubuntu', 'sans-serif'],
         },
         spacing: {
             0: '0px',
@@ -57,17 +63,17 @@ export default {
         home,
 
         // Theme Presets
-        plugin(function ({addBase, addUtilities}) {
+        plugin(function ({ addBase, addUtilities }) {
             // Generic Elements
             addBase({
                 body: {
                     '@apply h-screen': {},
                     '@apply mx-auto': {},
-                    '@apply font-roboto text-dark-500': {},
+                    '@apply font-ubuntu text-dark-500': {},
 
                     'div#root': {
-                        '@apply w-full h-full': {}
-                    }
+                        '@apply w-full h-full': {},
+                    },
                 },
             })
 
@@ -81,15 +87,15 @@ export default {
                     '@apply flex': {},
 
                     '&-center-start': {
-                        '@apply items-center': {},
+                        '@apply flex items-center': {},
                     },
 
                     '&-center': {
-                        '@apply items-center justify-center': {},
+                        '@apply flex items-center justify-center': {},
                     },
 
                     '&-center-between': {
-                        '@apply items-center justify-between': {},
+                        '@apply flex items-center justify-between': {},
                     },
                 },
 
@@ -97,6 +103,6 @@ export default {
                     '@apply flex flex-col': {},
                 },
             })
-        })
+        }),
     ],
 }

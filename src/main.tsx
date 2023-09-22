@@ -1,11 +1,16 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import { createRoot } from 'react-dom/client'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import {WelcomePage} from './Welcome/welcome.page'
 import './main.css'
+import { WelcomePage } from '@welcome/welcome.page'
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-        <WelcomePage/>
+        <BrowserRouter basename="/">
+            <Routes>
+                <Route path="/" element={<WelcomePage />} />
+            </Routes>
+        </BrowserRouter>
     </React.StrictMode>,
 )

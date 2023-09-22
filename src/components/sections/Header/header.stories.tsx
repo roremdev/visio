@@ -1,22 +1,10 @@
-import type {Meta, StoryObj, Args} from '@storybook/react';
-import {Header} from './index'
+import type { Meta, StoryObj } from '@storybook/react'
+import { Header } from './index'
 
 export default {
     title: 'Sections/Header',
     tags: ['autodocs'],
-    argTypes: {
-        headline: {
-            name: 'Label',
-            control: 'text',
-            description: 'Headline text',
-        }
-    },
-    args: {
-        headline: 'Headline'
-    },
-    render: ({label}) => {
-        return <Header headline={label} />
-    },
+    render: () => <Header />,
 } as Meta
 
 export const Default: StoryObj = {}
