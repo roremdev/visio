@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { userEvent, within } from '@storybook/testing-library'
+import { within, userEvent } from '@storybook/testing-library'
 
 import { Button } from './index'
 
@@ -17,31 +17,38 @@ export default {
             control: 'text',
             description: 'The button label',
         },
+        handleClick: {
+            action: 'clicked',
+        },
     },
     args: {
         showIcon: true,
         label: 'Download',
     },
-    render: ({ showIcon, label }) => {
+    render: ({ showIcon, label, handleClick }) => {
         return showIcon ? (
             <Button
+                onClick={handleClick}
                 label={label}
                 icon={
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
                         height="16"
-                        fill="currentColor"
-                        focusable="false"
-                        aria-hidden="true"
-                        role="img"
+                        fill="none"
+                        strokeWidth="2"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                     >
-                        <path d="M12.372 7.289l-4.405 4.416a.357.357 0 01-.506 0L3.057 7.29a.357.357 0 010-.506l.583-.584a.353.353 0 01.509.006l2.788 2.89V1.69c0-.196.161-.357.358-.357h.833c.196 0 .357.161.357.357v7.405l2.789-2.89a.358.358 0 01.509-.006l.583.584c.146.14.146.366.006.506zm.7 5.83H2.356a.358.358 0 00-.357.357v.833c0 .197.16.358.357.358h10.714c.197 0 .358-.161.358-.357v-.834a.358.358 0 00-.358-.357z" />
+                        <path d="M1,11.7v1.6C1,14.3,1.8,15,2.8,15h10.5c1,0,1.8-0.7,1.8-1.6v-1.6" />
+                        <path d="M3.6,6.8L8,10.9l4.4-4.1" />
+                        <path d="M8,1v9.9" />
                     </svg>
                 }
             />
         ) : (
-            <Button label={label} />
+            <Button onClick={handleClick} label={label} />
         )
     },
 } as Meta
@@ -49,7 +56,7 @@ export default {
 export const Default: StoryObj = {
     play: async ({ canvasElement }) => {
         const canvas = within(canvasElement)
-        const button = canvas.getByRole('button', { name: 'Download' })
+        const button = await canvas.findByRole('button', { name: 'Download' })
         await userEvent.click(button)
     },
 }

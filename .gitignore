@@ -1,1 +1,10 @@
+# SO
+.DS_Store
+
+# IDE
+.idea
+.vscode
+
+# Core
+dist
 node_modules

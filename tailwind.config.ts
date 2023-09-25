@@ -2,7 +2,9 @@
 import plugin from 'tailwindcss/plugin'
 
 import { header } from './src/components/sections/Header/header.style'
+
 import { button } from './src/components/ui/Button/button.style'
+import { toast } from './src/components/ui/Toast/toast.style'
 
 import { home } from './src/welcome/welcome.style'
 
@@ -10,27 +12,39 @@ export default {
     content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
     theme: {
         boxShadow: {
-            DEFAULT: '0px 8px 24px #959DA533',
+            DEFAULT: '0px 4px 12px #959DA533',
         },
         colors: {
             dark: {
+                200: '#8F9BB3',
                 300: '#6E798C',
+                400: '#4C566A',
                 500: '#3B4252',
                 600: '#2E3440',
             },
             light: {
-                400: '#F8F9FB',
-                500: '#D8DEE9',
-                600: '#a4b1c5',
+                200: '#F8F9FB',
+                300: '#F2F4F8',
+                400: '#ECEFF4',
+                500: '#E5E9F0',
+                600: '#D8DEE9',
+                700: '#C0CCDA',
             },
             white: '#FFFFFF',
         },
         extend: {
             backgroundImage: {
+                // Brand
                 logo: 'url("/assets/brand/logo.svg")',
+
+                // Icons
+                x: 'url("/assets/icons/x.svg")',
 
                 // Backgrounds patters
                 'dots-pattern': 'url("/assets/images/dots-pattern.svg")',
+            },
+            transitionProperty: {
+                'toast--hide': 'opacity, transform',
             },
         },
         fontFamily: {
@@ -55,6 +69,7 @@ export default {
     plugins: [
         // UI Components
         button,
+        toast,
 
         // Section Components
         header,

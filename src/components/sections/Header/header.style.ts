@@ -6,7 +6,7 @@ export const header = plugin(function ({ addBase }) {
             '@apply h-5 relative': {},
             '@apply py-1 px-3': {},
             '@apply row-center-between': {},
-            '@apply bg-white border-b border-light-500': {},
+            '@apply bg-white border-b border-light-700': {},
 
             '.header__content': {
                 '@apply row-center-between gap-0.5': {},
