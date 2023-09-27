@@ -1,0 +1,9 @@
+# OS
+.DS_Store
+
+# IDE
+.idea
+
+# Core
+dist
+node_modules
