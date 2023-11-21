@@ -1,0 +1,31 @@
+<script lang="ts" setup>
+import Button from './components/ui/Button/Button.vue'
+import Form from './components/ui/Form/Form.vue'
+</script>
+
+<template>
+    <h1 class="text-red-500">Hello World</h1>
+    <Button>
+        <template #icon>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="none"
+                stroke-width="2"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path
+                    d="M1,11.7v1.6C1,14.3,1.8,15,2.8,15h10.5c1,0,1.8-0.7,1.8-1.6v-1.6"
+                />
+                <path d="M3.6,6.8L8,10.9l4.4-4.1" />
+                <path d="M8,1v9.9" />
+            </svg>
+        </template>
+        Click me
+    </Button>
+
+    <Form />
+</template>
